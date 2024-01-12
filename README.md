@@ -48,8 +48,8 @@ npm install
 ```
 NEXT_PUBLIC_APPWRITE_ENDPOINT=your_appwrite_endpoint
 NEXT_PUBLIC_APPWRITE_PROJECT_ID=your_appwrite_project_id
-NEXT_PUBLIC_APPWRITE_DATABASE_ID=your_movies_collection_id
-NEXT_PUBLIC_APPWRITE_MOVIES_COLLECTION_ID=your_movies_databases_id
+NEXT_PUBLIC_APPWRITE_DATABASE_ID=your_movies_databases_id
+NEXT_PUBLIC_APPWRITE_MOVIES_COLLECTION_ID=your_movies_collection_id
 NEXT_PUBLIC_APPWRITE_BUCKET_ID=your_storage_id
 ```
 

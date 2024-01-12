@@ -1,18 +1,23 @@
 import appwriteService from "@/appwrite/service";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { Query } from "appwrite";
 
 const initialState = {
   data: [],
   status: "idle", // loading | success | failed
 };
 
-export const getMovies = createAsyncThunk("getMovies", async (_, thunkAPI) => {
-  const response = await appwriteService.getMovies();
+export const getMovies = createAsyncThunk(
+  "getMovies",
+  async (payload, thunkAPI) => {
+    let queries = [Query.limit(10), Query.offset((payload.page - 1) * 10)];
+    const response = await appwriteService.getMovies(queries);
 
-  if (!response) return thunkAPI.rejectWithValue(response);
+    if (!response) return thunkAPI.rejectWithValue(response);
 
-  return response;
-});
+    return response;
+  }
+);
 
 const movieList = createSlice({
   name: "movieList",

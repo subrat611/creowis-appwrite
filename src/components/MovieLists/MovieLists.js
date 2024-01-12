@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,11 +8,12 @@ import { getMovies } from "@/store/slices/movieListSlice";
 
 const MovieLists = () => {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
   const { data: movieList, status } = useSelector((state) => state.movieList);
 
   useEffect(() => {
-    dispatch(getMovies());
-  }, [dispatch]);
+    dispatch(getMovies({ page }));
+  }, [dispatch, page]);
 
   return (
     <section className="px-5 md:px-80 mt-10 mb-5 flex flex-col items-center">
@@ -23,9 +24,13 @@ const MovieLists = () => {
       </section>
 
       <button className="mt-2 font-normal text-sm flex items-center justify-center bg-transparent text-white border border-gray-600 p-2 rounded-sm">
-        <span className="ml-2">
-          {status !== "loading" ? " Load more movies" : "Loading movies"}
-        </span>
+        {status !== "loading" ? (
+          <span className="ml-2" onClick={() => setPage((prev) => prev + 1)}>
+            Load more movies
+          </span>
+        ) : (
+          <span className="ml-2">Loading movies</span>
+        )}
       </button>
     </section>
   );

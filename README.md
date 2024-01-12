@@ -6,6 +6,7 @@ of movies listed for the renting purpose.
 ## Features
 
 - View list of movies - movies are fetched from appwrite service
+- Implement pagination to load movies
 - View each movie details like price, rating, release year etc
 - Add movie to the cart
 - Remove the selected movie from the cart.

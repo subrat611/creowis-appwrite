@@ -33,7 +33,6 @@ const MovieLists = () => {
             Loading movies
             <span role="status" className="ml-2">
               <svg
-                aria-hidden="true"
                 class="w-5 h-5 text-gray-200 animate-spin dark:text-gray-600 fill-yellow-500"
                 viewBox="0 0 100 101"
                 fill="none"
@@ -48,7 +47,6 @@ const MovieLists = () => {
                   fill="currentFill"
                 />
               </svg>
-              <span class="sr-only">Loading...</span>
             </span>
           </span>
         )}

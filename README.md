@@ -1,4 +1,4 @@
-## CineFlix - An app for renting movies
+# 📽️ CineFlix - An app for renting movies
 
 It is an online movie store where users can see a list
 of movies listed for the renting purpose.
